@@ -1,0 +1,15 @@
+demo:
+  book:
+    author: tzbfine
+    name: idea起步
+
+spring:
+  datasource:
+    username: root
+    password: password
+    url: jdbc:mysql://localhost:3306/jdbctemp?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: frameworkdemo.summerboot.pojo

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="frameworkdemo.summerboot.dao.accountDao">
+    <resultMap id="AccountresultMap" type="frameworkdemo.summerboot.pojo.account">
+        <id column="id" property="id"></id>
+        <result column="name" property="name"></result>
+        <result column="money" property="salary"></result>
+        <!--id = 对象的主键 column = 列名 property = pojo中的属性名 -->
+        <!--配置完resultMap就不能配置resultType-->
+    </resultMap>
+
+    <parameterMap id="account" type="frameworkdemo.summerboot.pojo.account"></parameterMap>
+
+    <sql id="columnList">
+        id, name, money
+    </sql>
+
+    <select id="findById" resultMap="AccountresultMap">
+        select
+        <include refid="columnList" />
+        from account
+        where id = #{id}
+    </select>
+
+</mapper>
